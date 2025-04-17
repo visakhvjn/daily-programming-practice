@@ -1,0 +1,131 @@
+body {
+    padding: 10px;
+}
+
+.container {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  /* min-height: 100vh; */
+  margin: 0 auto;
+  box-sizing: border-box;
+  text-align: left;
+  /* border: 1px solid #ccc; */
+}
+
+.title {
+  font-family: 'Verdana', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-bottom: 2px solid #333;
+  color: #333;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+.question {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.examples {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px dashed #aaa;
+  border-radius: 5px;
+  background-color: #eef;
+}
+
+.constraints {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #ffe;
+}
+
+.description {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 18px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  background-color: #fdfdfd;
+}
+
+.loader {
+  display: none; /* Hidden by default */
+  font-size: 20px;
+  color: #555;
+  margin-top: 20px;
+}
+
+.loader.active {
+  display: block; /* Show when active */
+}
+
+.header {
+  text-align: left;
+  color: black;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.header h2 {
+  font-family: 'Verdana', sans-serif;
+  font-size: 28px;
+  margin: 0;
+}
+
+.header p {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  margin: 5px 0 0;
+}
+
+input[type="email"] {
+  font-size: 16px;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 250px;
+  box-sizing: border-box;
+}
+
+button#enroll-button {
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button#enroll-button:hover {
+  background-color: #0056b3;
+}
+
+.applications {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}

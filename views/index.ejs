@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generated Markdown</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="header">
+    <h2>Code Daily</h2>
+    <p>Sharpen your skills, one challenge at a time.</p>
+  </div>
+  <div class="container">
+    <div id="content"><%- htmlContent %></div>
+  </div>
+  <!-- <div>
+    <form id="subscribe-form">
+      <input type="email" id="email" name="email" placeholder="Question in your inbox..." required />
+      <button type="submit" id="enroll-button">Sign Me Up!</button>
+    </form>
+    <p id="subscribe-message"></p>
+  </div> -->
+  <script>
+    const form = document.getElementById('subscribe-form');
+    const message = document.getElementById('subscribe-message');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+
+      try {
+        const response = await fetch('/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email }),
+        });
+
+        if (response.ok) {
+          message.textContent = 'You have been subscribed successfully!';
+          message.style.color = 'green';
+          document.getElementById('email').value = ''; // Clear the input field
+        } else {
+          const errorText = await response.text();
+          message.textContent = errorText;
+          message.style.color = 'red';
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        message.textContent = 'An error occurred. Please try again.';
+        message.style.color = 'red';
+      }
+    });
+  </script>
+</body>
+</html>
