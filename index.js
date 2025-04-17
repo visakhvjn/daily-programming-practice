@@ -57,12 +57,12 @@ app.post('/subscribe', (req, res) => {
     res.status(200).send('Email subscribed successfully.');
 });
 
-// Schedule a task to delete the question file at 11:59 PM daily
-schedule.scheduleJob('59 23 * * *', () => {
+// Schedule a task to delete the question file every 6 hours
+schedule.scheduleJob('0 */6 * * *', () => {
     const filePath = './data/question.txt';
     if (fs.existsSync(filePath)) {
         fs.unlinkSync(filePath);
-        console.log('Question file deleted at 11:59 PM.');
+        console.log('Question file deleted every 6 hours.');
     } else {
         console.log('No question file found to delete.');
     }
