@@ -12,7 +12,8 @@
     "ejs": "^3.1.9",
     "dotenv": "^16.5.0",
     "openai": "^4.95.0",
-    "marked": "^5.0.0"
+    "marked": "^5.0.0",
+    "node-schedule": "^2.1.1"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"

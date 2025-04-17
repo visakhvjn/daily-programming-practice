@@ -2,6 +2,7 @@ import express from 'express';
 import { getDailyQuestion } from './openai.js';
 import fs from 'fs';
 import bodyParser from 'body-parser';
+import schedule from 'node-schedule';
 
 const app = express();
 
@@ -54,6 +55,17 @@ app.post('/subscribe', (req, res) => {
     const filePath = './data/subscribers.txt';
     fs.appendFileSync(filePath, `${email}\n`, 'utf8');
     res.status(200).send('Email subscribed successfully.');
+});
+
+// Schedule a task to delete the question file at 11:59 PM daily
+schedule.scheduleJob('59 23 * * *', () => {
+    const filePath = './data/question.txt';
+    if (fs.existsSync(filePath)) {
+        fs.unlinkSync(filePath);
+        console.log('Question file deleted at 11:59 PM.');
+    } else {
+        console.log('No question file found to delete.');
+    }
 });
 
 // Start the server
