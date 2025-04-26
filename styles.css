@@ -129,16 +129,3 @@ button#enroll-button:hover {
 	background-color: #e8f5e9;
 	color: #2e7d32;
 }
-
-.solution {
-	font-family: 'Courier New', Courier, monospace;
-	font-size: 16px;
-	margin-bottom: 20px;
-	padding: 10px;
-	border: 1px solid #4caf50;
-	border-radius: 5px;
-	background-color: #e8f5e9;
-	color: #2e7d32;
-	white-space: pre-wrap; /* Preserve formatting for code */
-	overflow-x: auto; /* Enable horizontal scrolling for long code lines */
-}
